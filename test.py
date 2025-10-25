@@ -43,7 +43,7 @@ def translate(model, src_sentence, max_len=seq_len):
         if next_token.item() == eos:
             break
 
-    output_indices = [i - eos - 1 for i in y.view(-1).tolist() if i > eos]
+    output_indices = [i - 3 for i in y.view(-1).tolist() if i > 2]
     return " ".join(eng_words[i] for i in output_indices)
 
 # # ---------------------
@@ -78,7 +78,7 @@ while True:
     src_indices = []
     for w in tokens:
         if w in cmn_words:
-            src_indices.append(cmn_words.index(w) + eos + 1)
+            src_indices.append(cmn_words.index(w) + 3)
         else:
             print(f"⚠️ 未知词：{w}")
             continue
