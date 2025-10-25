@@ -10,7 +10,11 @@ PS:感谢[ngolin](https://github.com/ngolin)提供了框架和数据集，本项
     pip install -r requirements.txt
 ```
 快速开始
-  利用训练好的 best_model.pt进行测试
+训练模型
+```bash
+    $ python main.py
+```
+利用训练好的 best_model.pt进行测试
 ```bash
     $ python test.py
 ```
