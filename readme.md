@@ -16,7 +16,7 @@ PS:感谢[ngolin](https://github.com/ngolin)提供了框架和数据集，本项
 ```
 利用训练好的 best_model.pt进行测试
 ```bash
-    $ python test.py
+    $ python model_test.py
 ```
 ## 文件说明
 main.py：训练代码
