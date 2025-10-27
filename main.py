@@ -1,6 +1,8 @@
 # train_test.py
 import torch
 from torch.utils.data import DataLoader
+import matplotlib
+matplotlib.use("Agg")  # Use non-interactive backend for servers/headless envs
 import matplotlib.pyplot as plt
 from time import perf_counter, ctime
 from datetime import timedelta
@@ -140,11 +142,12 @@ plt.xlabel("Steps")
 plt.ylabel("Loss")
 plt.title("Training Loss")
 plt.legend()
-plt.show()
+plt.tight_layout()
+plt.savefig("training_loss.png", dpi=150)
+print("Saved training loss plot to training_loss.png")
 
 # ---------------------
 # 加载最佳模型进行测试
 # ---------------------
-model.load_state_dict(torch.load("best_model.pt"))
+model.load_state_dict(torch.load("best_model.pt", map_location=device))
 eval(model, test_loader, print_result, seq_len)
-
