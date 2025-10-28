@@ -39,7 +39,7 @@ pip install torch --index-url https://download.pytorch.org/whl/cpu
 - GPU 服务器（根据服务器 CUDA 版本选择）
 参考 https://pytorch.org/get-started/locally/ 选择匹配 CUDA 的安装命令。例如（以 CUDA 12.x 为例）：
 ```bash
-pip install torch --index-url https://download.pytorch.org/whl/cu121
+pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu126
 ```
 注意：requirements.txt 中的版本是参考，若与你的服务器 CUDA 不匹配，请以官网命令为准安装可用版本。
 
